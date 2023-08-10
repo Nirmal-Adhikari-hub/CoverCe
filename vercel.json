@@ -12,18 +12,6 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "https://cover6images6commerce.blob.core.windows.net/cover-images-commerce/static/$1"
-    },
-    {
-      "src": "/media/(.*)",
-      "dest": "https://cover6images6commerce.blob.core.windows.net/cover-images-commerce/media/$1"
-    },
-    {
-      "src": "/protected/(.*)",
-      "dest": "https://cover6images6commerce.blob.core.windows.net/cover-images-commerce/protected/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "cfehome/wsgi.py"
     }
