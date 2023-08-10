@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "cfehome/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.10"
+      }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "https://cover6images6commerce.blob.core.windows.net/cover-images-commerce/static/$1"
+    },
+    {
+      "src": "/media/(.*)",
+      "dest": "https://cover6images6commerce.blob.core.windows.net/cover-images-commerce/media/$1"
+    },
+    {
+      "src": "/protected/(.*)",
+      "dest": "https://cover6images6commerce.blob.core.windows.net/cover-images-commerce/protected/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "cfehome/wsgi.py"
+    }
+  ]
+}

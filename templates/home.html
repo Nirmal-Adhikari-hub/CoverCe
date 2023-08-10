@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0">
+    <div class="text-center sm:max-w-md w-full mx-auto">
+      {% if user.is_superuser %}
+        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">Welcome <span class="text-blue-500">Nirmal</span>. Your Tech is functioning well :).</h1>
+      {% else %}
+        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">eCommerce of cover images makes <span class="text-blue-500">CoverCe</span>.</h1>
+        <span class="text-gray-300">And this is only a small model of eCommerce, hence "micro-coverce".</span>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

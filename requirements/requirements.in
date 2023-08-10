@@ -1,0 +1,12 @@
+Django>4.1,<4.2
+psycopg2-binary
+dj-database-url
+python-decouple
+Pillow
+stripe
+boto3
+azure-storage-blob
+django-storages[azure]
+azure-storage-file-datalake
+requests
+gunicorn

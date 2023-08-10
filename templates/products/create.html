@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="." class="space-y-6 mx-auto max-w-md">
+
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit" class="btn-submit bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-600">Create</button>
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    {% include 'base/css.html' %}
+
+    <title>{% block head_title %}Micro Coverce{% endblock head_title %}</title>
+    <style>
+        /* Dark theme styles */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .bg-dark {
+            background-color: #1a1a1a;
+        }
+
+        .text-light {
+            color: #f0f0f0;
+        }
+
+        .btn-dark {
+            background-color: #212529;
+            color: #ffffff;
+        }
+
+        /* Attractive dark theme adjustments */
+        h1, h2, h3, h4, h5, h6 {
+            color: #f0f0f0;
+        }
+
+        p, a, span {
+            color: #ccc;
+        }
+
+        /* Sparkle animation in dark theme */
+        @keyframes sparkle {
+            /* Your animation keyframes for dark theme */
+        }
+
+        .star-animation {
+            /* Your animation styles for dark theme */
+        }
+    </style>
+</head>
+
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+    {% include 'base/navbar.html' %}
+
+    <div class="container mx-auto mt-4 min-h-screen">
+
+        {% if messages %}
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    {% for message in messages %}
+                    <div class="mb-3 p-3 rounded-lg bg-dark text-light
+                                {% if message.tags == 'success' %} bg-green-100 text-green-800 {% endif %}
+                                {% if message.tags == 'error' %} bg-red-100 text-red-800 {% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    {% include 'base/footer.html' %}
+    {% include 'base/js.html' %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+
+    <!-- Include your dark-themed scripts here -->
+
+</body>
+
+</html>
