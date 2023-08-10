@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("DJANGO_SECRET_KEY", default=None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DJANGO_DEBUG", cast = bool, default=False)
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 ALLOWED_HOST = config("ALLOWED_HOST", cast=str, default="")
 if ALLOWED_HOST:
     ALLOWED_HOSTS.append(ALLOWED_HOST.strip())
@@ -159,13 +159,14 @@ AZURE_CONTAINER = config("AZURE_CONTAINER")
 AZURE_CONNECTION_STRING = config("AZURE_CONNECTION_STRING")
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
+
 STATICFILES_DIRS = [BASE_DIR / 'static']
-# STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/static/'
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/static/'
 STATICFILES_STORAGE = 'cfehome.custom_storage.custom_azure.AzureStaticStorage'
-# MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/media/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/media/'
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 PROTECTED_FILE_STORAGE = 'cfehome.custom_storage.custom_azure.AzureProtectedStorage'
-# PROTECTED_MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/protected'
+PROTECTED_MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/protected'
 
 
 # STATICFILES_DIRS = [
@@ -176,9 +177,9 @@ PROTECTED_FILE_STORAGE = 'cfehome.custom_storage.custom_azure.AzureProtectedStor
 # PROTECTED_AZURE_CONTAINER = 'protected_assets_container'
 
 # Set the URL for media and static files
-MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/products/'
-STATIC_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/static/'
-PROTECTED_MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/protected/'
+# MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/products/'
+# STATIC_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/static/'
+# PROTECTED_MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/protected/'
 
 # Optional: Set the storage class for protected assets
 # PROTECTED_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
