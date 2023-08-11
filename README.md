@@ -3,8 +3,8 @@
 Micro Coverce is a test project showcasing a simplified ecommerce platform for cover images. Users can register, log in, and explore a collection of cover images. They have the option to purchase cover images through Stripe payment integration or download free attachments.
 
 ![Coverce Homepage](coverce-screenshot.png)
-![Coverce Product List Page](coverce-screenshot.png)
-![Coverce Product Detail Page](coverce-screenshot.png)
+![Coverce Product List Page](coverce-screenshot1.png)
+![Coverce Product Detail Page](coverce-screenshot2.png)
 
 ## Features
 
