@@ -11,7 +11,7 @@ Micro Coverce is a test project showcasing a simplified ecommerce platform for c
 - User Registration and Authentication: Allow users to create accounts and log in securely.
 - Product Listing: Display a variety of cover images available for purchase.
 - Product Detail: View detailed information about each cover image, including price and description.
-- Shopping Cart: Add products to the cart and proceed to checkout using Stripe.
+- Checkout: Products checkout using Stripe.
 - Free Attachments: Offer free attachments that users can download without purchase.
 - Superuser Access: Superusers can manage products and view additional functionality.
 
